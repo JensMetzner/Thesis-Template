@@ -1,0 +1,38 @@
+% !TeX program = PdfLaTeX
+% !TeX encoding = UTF-8
+% !TEX output_directory = ./build/
+\documentclass{thesis}
+
+\renewcommand{\hexchaptercolor}{c3c3c3}
+% \renewcommand{\hexchaptercolor}{c3c3c3}
+% \newcommand{\chair}{Chair of Computer Graphics and Media Design}
+% \newcommand{\department}{Department of Computer Science}
+
+\author{Jens Metzner}
+\date{\today}
+
+\begin{document}
+\makecover
+\makeaffidavit
+
+% \input{inc/cover}
+\onehalfspacing
+% \input{inc/affidavit}
+% \input{inc/chapters/introduction/summary}
+
+\tableofcontents
+%\listoffigures
+
+% chapter
+\input{inc/chapters/introduction/index}
+% \input{inc/chapters/related_work/index}
+% \input{inc/chapters/method/index}
+% \input{inc/chapters/app/index}
+% \input{inc/chapters/results/index}
+% \input{inc/chapters/conclusion/index}
+
+% \nocite{*}
+% \bibliographystyle{mybib}
+% \bibliography{../references/references}
+
+\end{document}
