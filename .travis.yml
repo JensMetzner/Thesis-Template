@@ -3,8 +3,9 @@ sudo: required
 notifications:
   email: false
 before_install:
+  - 'sudo add-apt-repository universe'
   - 'sudo apt-get -qq update'
-  - 'sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-extra texlive-fonts-recommended texlive-lang-german pgf dvipng'
+  - 'sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-lang-german pgf dvipng'
 script:
   - 'pdflatex --version'
   - 'mkdir -p ./build/pages'
