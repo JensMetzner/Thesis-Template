@@ -6,8 +6,6 @@ addons:
   homebrew:
     casks:
     - basictex
-before_install:
-  - 'which pdflatex'
 script:
   - 'pdflatex --version'
   - 'mkdir -p ./build/pages'
