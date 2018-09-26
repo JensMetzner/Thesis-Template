@@ -5,7 +5,7 @@ notifications:
 before_install:
   - 'sudo add-apt-repository -y ppa:jonathonf/texlive'
   - 'sudo apt-get -qq update'
-  - 'sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-lang-german pgf dvipng'
+  - 'sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-lang-german texlive-bibtex-extra biber pgf dvipng'
 script:
   - 'pdflatex --version'
   - 'mkdir -p ./build/pages'
