@@ -1,0 +1,30 @@
+dist: trusty
+sudo: required
+notifications:
+  email: false
+before_install:
+  - 'sudo apt-get -qq update'
+  - 'sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-extra texlive-fonts-recommended texlive-lang-german pgf dvipng'
+script:
+  - 'pdflatex --version'
+  - 'mkdir -p ./build/pages'
+  - 'pdflatex -interaction=nonstopmode -halt-on-error -output-directory ./build thesis.tex'
+  - 'pdflatex -interaction=nonstopmode -halt-on-error -output-directory ./build thesis.tex'
+  - 'cp ./build/thesis.pdf ./build/pages/thesis_current.pdf'
+  - 'if [ -n "$TRAVIS_TAG" ]; then mv ./build/thesis.pdf ./build/thesis_$TRAVIS_TAG.pdf; fi'
+deploy:
+  -
+    provider: releases
+    api_key: $GITHUB_TOKEN
+    skip_cleanup: true
+    file: ./build/thesis_$TRAVIS_TAG.pdf
+    on:
+      tags: true
+  -
+    provider: pages
+    github_token: $GITHUB_TOKEN
+    skip_cleanup: true
+    local-dir: ./build/pages
+    target-branch: compiled
+    on:
+      branch: master

@@ -1,38 +1,51 @@
 % !TeX program = PdfLaTeX
+% !BIB program = biber
 % !TeX encoding = UTF-8
 % !TEX output_directory = ./build/
 \documentclass{thesis}
 
-\renewcommand{\hexchaptercolor}{c3c3c3}
-% \renewcommand{\hexchaptercolor}{c3c3c3}
-% \newcommand{\chair}{Chair of Computer Graphics and Media Design}
-% \newcommand{\department}{Department of Computer Science}
+% Use \thetitle \thelocation etc to get the value
+% Use \thetitle{} to add space behind the value
 
-\author{Jens Metzner}
+\title{Deutscher Title}
+\translatedtitle{English Title}
+\university{Universität Konstanz}
+\chair{Chair of Computer Graphics and Media Design}
+\department{Department of Computer Science}
+\hexchaptercolor{4BA3CC}
+\thesistype{Master Thesis}
+\desireddegree{Master of Science (M.Sc.)}
 \date{\today}
-
+\studentid{01/133337}
+\author{Max Mustermann}
+\location{Konstanz}
+\firstevaluator{Prof.~Dr.~Oliver Deussen}
+\secondevaluator{Prof.~Dr.~Second Evaluator}
+\advisor{First Advisor}
+\fieldofstudy{Computer Science}
+\focus{Computer Graphics}
+\acknowledgments{Bedanken möchte ich mich bei \thefirstevaluator{} und meinem Betreuer \theadvisor{} für ihre Unterstützung und Beratung.}
+\addbibresource{thesis.bib}
 \begin{document}
+% \selectlanguage{english}
+\selectlanguage{ngerman}
 \makecover
 \makeaffidavit
 
-% \input{inc/cover}
 \onehalfspacing
-% \input{inc/affidavit}
-% \input{inc/chapters/introduction/summary}
-
+\input{inc/chapters/introduction/summary}
 \tableofcontents
-%\listoffigures
+\listoffigures
 
 % chapter
 \input{inc/chapters/introduction/index}
-% \input{inc/chapters/related_work/index}
-% \input{inc/chapters/method/index}
-% \input{inc/chapters/app/index}
-% \input{inc/chapters/results/index}
-% \input{inc/chapters/conclusion/index}
+\input{inc/chapters/related_work/index}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \nocite{*}
-% \bibliographystyle{mybib}
-% \bibliography{../references/references}
+% Insert your special parts here!
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{inc/chapters/results/index}
+\input{inc/chapters/conclusion/index}
+\printbibliography
 \end{document}
