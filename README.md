@@ -4,7 +4,10 @@
 This is a template for a thesis.
 
 ## Build
-This template uses `pdflatex` and `biber` for the build process. In addition _magic comments_ are defined.
+For building this repository you can use either `pdflatex` and `biber` or `latexmk` for the build process. For a better writing experience, _magic comments_ have been defined.
 
 ## Travis
-Add `GITHUB_TOKEN` to the _environment variables_ of your travis project. By adding a tag in github, a release version of the current state will be build and added to this tag. After every commit, travis will build the current state and will push the resulting pdf to the `compiled` branch.
+If you want to use [travis-ci.com](travis) for this project, you have to define a `GITHUB_TOKEN` with a _Personal access tokens_ in the _environment variables_ of your travis project. You can create a _Personal access tokens_ at the github page at '_Settings_' > '_Developer settings_'.
+
+Travis will build the current state of the repository after each push and the resulting pdf will then be pushed to the `compiled` branch.
+Furthermore, by adding and pushing a tag to this repository the current state of the repository will be also build and then added to the releases.
