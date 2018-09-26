@@ -2,8 +2,12 @@ os: osx
 sudo: required
 notifications:
   email: false
+addons:
+  homebrew:
+    casks:
+    - basictex
 before_install:
-  - 'brew cask install mactex'
+  - 'which pdflatex'
 script:
   - 'pdflatex --version'
   - 'mkdir -p ./build/pages'
