@@ -7,8 +7,8 @@ notifications:
 install:
   - 'docker pull jensmetzner/latex'
   - 'mkdir -p ./build/pages'
-  - 'docker run -v ${pwd}:/latex jensmetzner/latex pdflatex -halt-on-error -output-directory ./build/ thesis.tex'
-  - 'docker run -v ${pwd}:/latex jensmetzner/latex pdflatex -halt-on-error -output-directory ./build/ thesis.tex'
+  - 'docker run -v $PWD:/latex jensmetzner/latex pdflatex -halt-on-error -output-directory ./build/ thesis.tex'
+  - 'docker run -v $PWD:/latex jensmetzner/latex pdflatex -halt-on-error -output-directory ./build/ thesis.tex'
   - 'cp ./build/thesis.pdf ./build/pages/thesis_current.pdf'
   - 'if [ -n "$TRAVIS_TAG" ]; then mv ./build/thesis.pdf ./build/thesis_$TRAVIS_TAG.pdf; fi'
 deploy:
