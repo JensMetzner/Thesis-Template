@@ -4,7 +4,7 @@ services:
   - docker
 notifications:
   email: false
-install
+install:
   - 'docker pull jensmetzner/latex'
   - 'mkdir -p ./build/pages'
   - 'docker run -v ${pwd}:/latex jensmetzner/latex pdflatex -halt-on-error -output-directory ./build/ thesis.tex'
